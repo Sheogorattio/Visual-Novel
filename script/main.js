@@ -36,6 +36,9 @@ CONTROL_NEXT.addEventListener('click', ()=>{
   if(line.hasOwnProperty('chioses')){
     File.CommandCreator.create('choose', line.chioses,optionsBar).execute();
   }
+  if(line.hasOwnProperty('nextIndex')){
+    File.CommandCreator.create('changeIndex', line.nextIndex).execute();
+  }
   File.CommandCreator.create('say', line.author,line.say,AUTHOR_HOLDER,TEXT_HOLDER).execute();
 })
 
@@ -50,6 +53,9 @@ CONTROL_PREV.addEventListener('click', ()=>{
   }
   if(line.hasOwnProperty('chioses')){
     File.CommandCreator.create('choose', line.chioses,optionsBar).execute();
+  }
+  if(line.hasOwnProperty('nextIndex')){
+    File.CommandCreator.create('changeIndex', line.nextIndex).execute();
   }
   File.CommandCreator.create('say', line.author,line.say,AUTHOR_HOLDER,TEXT_HOLDER).execute();
 })

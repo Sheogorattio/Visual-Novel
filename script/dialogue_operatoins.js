@@ -1,4 +1,5 @@
 import {CreateOption} from './basic_visual.js'
+import { Dialogue } from './dialogue.js';
 
 class Command{
     constructor(){
@@ -49,6 +50,16 @@ export class CommandChoise extends Command{
     }
 }
 
+export class CommandChangeIndex extends Command{
+    constructor(indexPlus){
+        super();
+        this.indexPlus = indexPlus;
+    }
+    execute(){
+        Dialogue.counter+=this.indexPlus;
+    }
+}
+
 export class CommandCreator{
     static create(commandType){
         switch (commandType){
@@ -60,6 +71,9 @@ export class CommandCreator{
             }
             case 'loadImage':{
                 return new CommandLoadImage(arguments[1], arguments[2], arguments[3]);//background, character, characterPlace
+            }
+            case 'changeIndex' :{
+                return new CommandChangeIndex(arguments[1]);
             }
         }
     }
