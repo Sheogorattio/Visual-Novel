@@ -87,7 +87,7 @@ export function CreateOption(optionsBar, text, nextLineIndex){
     return element;
 }
 
-function ClearOptions(optionsBar){
+export function ClearOptions(optionsBar){
     let options = optionsBar.querySelectorAll('.option');
     for(let i=0; i < options.length ; i++){
         optionsBar.removeChild(options[i]);
