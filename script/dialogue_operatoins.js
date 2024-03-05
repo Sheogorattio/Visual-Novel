@@ -51,12 +51,45 @@ export class CommandChoise extends Command{
 }
 
 export class CommandChangeIndex extends Command{
-    constructor(indexPlus){
+    constructor(indexPlus, Dialogue){
         super();
         this.indexPlus = indexPlus;
+        this.Dialogue = Dialogue;
     }
     execute(){
-        Dialogue.counter+=this.indexPlus;
+        this.Dialogue.counter+=this.indexPlus;
+    }
+}
+
+export class CommandChangeItemState extends Command{
+    constructor(itemName, items){
+        super();
+        this.itemName = itemName;
+        this.items = items;
+    }
+    execute(){
+        switch(this.itemName){
+            case 'lunchbox':{
+                this.items.lunchbox = true;
+                return this.items;
+            }
+            case 'keychain':{
+                this.items.bracelet = true;
+                return this.items;
+            }
+            case 'talisman':{
+                this.items.bracelet = true;
+                return this.items;
+            }
+            case 'chocolate':{
+                this.items.bracelet = true;
+                return this.items;
+            }
+            case 'bracelet':{
+                this.items.bracelet = true;
+                return this.items;
+            }
+        }
     }
 }
 
@@ -73,10 +106,10 @@ export class CommandCreator{
                 return new CommandLoadImage(arguments[1], arguments[2], arguments[3]);//background, character, characterPlace
             }
             case 'changeIndex' :{
-                return new CommandChangeIndex(arguments[1]);
+                return new CommandChangeIndex(arguments[1], arguments[2]);
             }
-            case 'loadNext' :{
-                return new CommandLoadNext();
+            case 'getItem' :{
+                return new CommandChangeItemState(arguments[1], arguments[2]);//itemName, items
             }
         }
     }

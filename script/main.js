@@ -4,6 +4,14 @@ import * as Page from './basic_visual.js'
 import * as Dialogue from './dialogue.js'
 import * as File from './dialogue_operatoins.js'
 
+let MainItems ={
+  lunchbox : false,
+  keychain : false,
+  talisman : false,
+  chocolate : false,
+  bracelet : false,
+}
+
 const textdiv = Page.CreateTextHolder();
 const optionsBar = Page.CreateOptionsBar();
 const characterDiv = Page.CreatePerson();
@@ -26,9 +34,6 @@ CONTROL_NEXT.addEventListener('click', ()=>{
   Page.ClearOptions(optionsBar);
   let line = Act.getNextLine();
   HandleLine(line);
-  if(line.hasOwnProperty('final')){
-    Act = ActArr[++ACT_SEQ_COUNT];
-  }
 })
 
 CONTROL_PREV.addEventListener('click', ()=>{
@@ -39,6 +44,10 @@ CONTROL_PREV.addEventListener('click', ()=>{
 })
 
 function HandleLine(line){
+  if(line.hasOwnProperty('getItem')){
+    MainItems = File.CommandCreator.create('getItem',line.getItem, MainItems).execute();
+    console.log(MainItems);
+  }
   if(line.hasOwnProperty('background')){
     File.CommandCreator.create('loadImage', Page.Background.get(line.background), null, null).execute();
   }
@@ -50,7 +59,11 @@ function HandleLine(line){
     File.CommandCreator.create('choose', line.chioses,optionsBar).execute();
   }
   if(line.hasOwnProperty('nextIndex')){
-    File.CommandCreator.create('changeIndex', line.nextIndex).execute();
+    File.CommandCreator.create('changeIndex', line.nextIndex, Dialogue)//.execute();
   }
   File.CommandCreator.create('say', line.author,line.say,AUTHOR_HOLDER,TEXT_HOLDER).execute();
+  if(line.hasOwnProperty('final')){
+    if(ACT_SEQ_COUNT === ActArr) ACT_SEQ_COUNT = 0;
+    else Act = ActArr[++ACT_SEQ_COUNT];
+  }
 }

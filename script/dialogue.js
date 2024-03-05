@@ -2,8 +2,8 @@ import * as Lines from './lines.js'
 export class Dialogue{
     constructor(lines){
         this.lines = lines;
+        this.counter = -1;
     }
-    counter =-1;
     getLines(){
         return JSON.stringify(this.lines);
     }
@@ -11,7 +11,7 @@ export class Dialogue{
         return this.lines[++this.counter];
     }
     getPrevLine(){
-        if(this.counter >=0) return this.lines[--this.counter];
+        if(this.counter >0) return this.lines[--this.counter];
         else return this.lines[this.counter];
     }
 }

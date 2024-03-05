@@ -76,7 +76,7 @@ export function CreateOptionsBar(){
 }
 
 export function CreateOption(optionsBar, text, nextLineIndex){
-    let element = document.createElement('div');
+    let element = document.createElement('div'); 
     element.classList.add('option');
     element.textContent = text;
     element.addEventListener('mousedown', ()=>{
