@@ -17,9 +17,22 @@ export class CommandSay extends Command{
         this.authorHolder = authorHolder;
         this.textHolder = textHolder;
     }
-    execute(){ 
+    execute(){
         this.authorHolder.textContent = this.author;
         this.textHolder.textContent = this.line;
+    }
+}
+
+export class CommandLoadImage extends Command{
+    constructor(background, character, characterPlace){
+        super();
+        this.background = background;
+        this.character = character;
+        this.characterPlace = characterPlace;
+    }
+    execute(){
+       if(this.background != null || undefined) document.body.style.backgroundImage = `url(${this.background})`;
+       if(this.character != null || undefined) this.characterPlace.src = this.character;
     }
 }
 
@@ -44,6 +57,9 @@ export class CommandCreator{
             }
             case 'choose':{
                 return new CommandChoise(Array.from(arguments[1]),arguments[2]);//array of options on arguments[1], optionsBar
+            }
+            case 'loadImage':{
+                return new CommandLoadImage(arguments[1], arguments[2], arguments[3]);//background, character, characterPlace
             }
         }
     }

@@ -12,7 +12,7 @@
 body {
     width: 100vw;
     height: 100vh;
-    background-image: url('../ACT_1/Kitchen_Day.png');
+    background-color: rgb(31, 31, 31);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -21,13 +21,16 @@ body {
 
 .person{
     position: absolute;
-    left: 0;
-    width: 50%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .person img{
+    
     display: block;
-    width: 100%;
+    object-fit: cover;
 }
 
 .dialogue-words{
@@ -79,7 +82,6 @@ body {
     top: 5%;
     width: 70%;
     left: 15%;
-    outline: 1px red solid;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

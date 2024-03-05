@@ -37,7 +37,7 @@ export function CreatePerson(path){
     person.classList.add('person');
 
     let image = document.createElement('img');
-    image.src = path;
+    //image.src = path;
 
     person.appendChild(image);
 
@@ -94,3 +94,15 @@ function ClearOptions(optionsBar){
         optionsBar.removeChild(options[i]);
     }
 }
+
+export let Characters = new Map([
+        ['Шики','/Visual-Novel/ACT_1/MainCharacter.png'],
+        ['Мидзу','/Visual-Novel/ACT_1/Sister.png'],
+    ]
+)
+
+export let Background = new Map([
+    ['Bathroom','/Visual-Novel/ACT_1/Bathroom.png'],
+    ['Bedroom','/Visual-Novel/ACT_1/Bedroom_Evening.png'],
+    ['Kitchen','/Visual-Novel/ACT_1/Kitchen_Day.png']
+])
