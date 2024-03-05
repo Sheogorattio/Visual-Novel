@@ -61,7 +61,7 @@ export class CommandChangeIndex extends Command{
 }
 
 export class CommandCreator{
-    static create(commandType){
+    static create(commandType){//'say', arg1, arg2, ...
         switch (commandType){
             case 'say':{
                 return new CommandSay(arguments[1],arguments[2],arguments[3],arguments[4]);//author, line, authorHolder, textHolder
@@ -74,6 +74,9 @@ export class CommandCreator{
             }
             case 'changeIndex' :{
                 return new CommandChangeIndex(arguments[1]);
+            }
+            case 'loadNext' :{
+                return new CommandLoadNext();
             }
         }
     }

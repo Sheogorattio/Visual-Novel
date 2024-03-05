@@ -81,8 +81,7 @@ export function CreateOption(optionsBar, text, nextLineIndex){
     element.textContent = text;
     element.addEventListener('mousedown', ()=>{
         Dialogue.counter+=nextLineIndex;
-        let line =Dialogue.getNextLine();
-        File.CommandCreator.create('say', line.author,line.say,document.querySelector('.speaker-name'),document.querySelector('.speaker-name+p')).execute();
+        document.body.querySelector('.next').click();
         ClearOptions(optionsBar);
     })
     return element;
@@ -96,13 +95,17 @@ function ClearOptions(optionsBar){
 }
 
 export let Characters = new Map([
-        ['Шики','/Visual-Novel/ACT_1/MainCharacter.png'],
-        ['Мидзу','/Visual-Novel/ACT_1/Sister.png'],
+        ['Шики','ACT_1/MainCharacter.png'],
+        ['Мидзу','ACT_1/Sister.png'],
+        //ACT2
+        ['Мику', 'ACT_2/miku.png'],
     ]
 )
 
 export let Background = new Map([
-    ['Bathroom','/Visual-Novel/ACT_1/Bathroom.png'],
-    ['Bedroom','/Visual-Novel/ACT_1/Bedroom_Evening.png'],
-    ['Kitchen','/Visual-Novel/ACT_1/Kitchen_Day.png']
+    ['Bathroom','ACT_1/Bathroom.png'],
+    ['Bedroom','ACT_1/Bedroom_Evening.png'],
+    ['Kitchen','ACT_1/Kitchen_Day.png'],
+    //ACT 2 
+    ['Street', 'ACT_2/street.png'],
 ])
