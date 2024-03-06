@@ -264,23 +264,28 @@ export const Act2 = [
     },
     {
         author: "Мику",
+        say: "Неплохо!", // Мику поставит ножницы 
+        spawn : "Мику"
+    },
+    {
+        author: "Мику",
         say: "И 3 раунд", // Мику поставит ножницы 
         spawn : "Мику",
         chioses : [
-        {
-            say : "Камень",
-            nextIndex : 0
-        },
-        {
-            say : "Ножницы",
-            nextIndex : 1
-        },
-        {
-            say : "Бумага",
-            nextIndex : 2
-        },
-        {
-            say : "...",
+            {
+                say : "Камень",
+                nextIndex : 0
+            },
+            {
+                say : "Ножницы",
+                nextIndex : 1
+            },
+            {
+                say : "Бумага",
+                nextIndex : 2
+            },
+            {
+                say : "...",
                 nextIndex : 3
             }
         ]
