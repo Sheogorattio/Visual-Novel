@@ -24,7 +24,34 @@
         <div class="heart"><img src="ACT_1/black_heart.png" alt=""></div>
     </div>
 
-    
+    <div class="musa">
+        <audio id="myAudio" src="music/1.ogg" loop ></audio>
+        <img id="musicImage" src="music/music.png" onclick="toggleMusic()">
+      </div>
+    <script>
+      let audio = document.getElementById("myAudio");
+      let image = document.getElementById("musicImage");
+      function toggleMusic() {
+        if (audio.paused) {
+          audio.volume = "0.15";
+          audio.play();
+          image.src = "music/music.png";
+        } else {
+          audio.pause();
+          image.src = "music/minusmusic.png"; 
+        }
+    }
+    document.addEventListener("keydown", function(event) {
+    if (event.keyCode === 32) {
+      toggleMusic();
+        }
+    });
+    </script>
+
+    <!-- <div class="musa">
+        <audio id="myAudio" src="music/1.ogg" loop></audio>
+        <img id="musicImage" src="music/music.png" onclick="toggleMusic()">
+    </div> -->
     <!-- <div class="person">
         <img src="./ACT_1/Sister.png" alt="">
     </div>

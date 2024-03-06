@@ -29,7 +29,6 @@ document.body.appendChild(textdiv);
 const TEXT_HOLDER = textdiv.querySelector('p'), AUTHOR_HOLDER = textdiv.querySelector('.speaker-name');
 const CONTROL_NEXT = document.querySelector('.next'), CONTROL_PREV = document.querySelector('.prev');
 const SAVE = document.querySelector('.save');
-
 TEXT_HOLDER.textContent = "Нажмите кнопку ДАЛЕЕ, чтобы продолжить";
 
 let ACT_SEQ_COUNT = 0;
@@ -69,6 +68,8 @@ SAVE.addEventListener('click', ()=>{
 })
 SAVE.click();
 
+
+
 CONTROL_NEXT.addEventListener('click', ()=>{
   Page.CleanFields(AUTHOR_HOLDER,TEXT_HOLDER);
   Page.ClearOptions(optionsBar);
@@ -102,6 +103,7 @@ function HandleLine(line){
     CONTROL_NEXT.classList.add('hide');
     File.CommandCreator.create('choose', line.chioses,optionsBar).execute();
   }
+
   if(line.hasOwnProperty('nextIndex')){
     console.log(Dialogue.Dialogue.counter)
     Act = File.CommandCreator.create('changeIndex', line.nextIndex, Act).execute();
