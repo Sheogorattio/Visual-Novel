@@ -327,6 +327,7 @@ export const Act2 = [
         author: "Шики ",
         say: "Не смог в последнем раунде тебя выйграть", // теряет здоровье 
         spawn : "Шики",
+        damage: "",
         nextIndex: 2
      },
     //option 1
@@ -411,7 +412,8 @@ export const Act3 = [
             },
             {
                 say: "Я не знаю!",
-                nextIndex: 13
+                nextIndex: 13,
+                damage: ""
             }
         ]
     },
@@ -681,7 +683,9 @@ export const Act4 = [
     //option 2
     {
         author: "Шидзу",
+        damage: "",
         say: "Глупошики не правильно!"
+        
     },
     //option Вопрос 2 
     {
@@ -695,11 +699,11 @@ export const Act4 = [
             },
             {
                 say : "Dark Souls",
-                nextIndex : 0
+                nextIndex : 1
             },
             {
                 say : "Castle Demons",
-                nextIndex : 1
+                nextIndex : 0
             },
             {
                 say : "Не знаю",
@@ -716,6 +720,7 @@ export const Act4 = [
     //option 2
     {
         author: "Шидзу",
+        damage: "",
         say: "Глупошики не правильно соберись!"
     },
     //option Вопрос 3
@@ -726,11 +731,11 @@ export const Act4 = [
         chioses : [
             {
                 say : "Захватить замок демонов",
-                nextIndex : 1
+                nextIndex : 0
                },
             {
                 say : "Захватить мир",
-                nextIndex : 0
+                nextIndex : 1
             },
             {
                 say : "Захватить короля демнов",
@@ -751,6 +756,7 @@ export const Act4 = [
     //option 2
     {
         author: "Шидзу",
+        damage: "",
         say: "Глупошики не правильно соберись, ты безнадежен!"
     },
             //option Вопрос 4
@@ -788,6 +794,7 @@ export const Act4 = [
             //option 2
             {
                 author: "Шидзу",
+                damage: "",
                 say: "Глупошики не правильно соберись, ты безнадежен, я не знаю что и сказать..."
             },
 
@@ -819,6 +826,7 @@ export const Act4 = [
             {
                 author: "Шидзу",
                 say: "Да ну ладно спасибо за отзыв дурак",
+                damage: "",
                 nextIndex : 3
             },
             //option 2
@@ -969,7 +977,7 @@ export const Act4 = [
             },
             {
                 author: "Рика",
-                say: "-Простите мне надо срочно идти ",
+                say: "Простите мне надо срочно идти ",
                 spawn: "Рика"
             },
             {
