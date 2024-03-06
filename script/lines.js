@@ -220,12 +220,12 @@ export const Act2 = [
                 nextIndex : 1
             },
             {
-                say : "...",
-                nextIndex : 2
-            },
-            {
                 say : "Камень",
                 nextIndex : 1
+            },
+            {
+                say : "...",
+                nextIndex : 2
             }
         ]
     },
