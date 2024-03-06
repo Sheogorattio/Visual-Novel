@@ -111,14 +111,16 @@ export function ClearOptions(optionsBar){
 export let Characters = new Map([
         ['none',' '],
         ['Шики','ACT_1/MainCharacter.png'],
-        ['Мидзу','ACT_1/Sister.png'],
+        ['Мидзу','gif-girl/1g.gif'],
         //ACT2
-        ['Мику', 'ACT_2/miku.png'],
+        ['Мику', 'gif-girl/2g.gif'],
         //ACT3
-        ['Рика', 'ACT_3/rika.png'],
-        ['Ютори', 'ACT_3/ytori.png'],
+        ['Рика', 'gif-girl/rika.gif'],
+        ['Ютори', 'gif-girl/ytori.gif'],
+        //ACT4
+        ['Шидзу', 'gif-girl/shidzu.gif'],
         //ACT5
-        ['Хроно', 'ACT_5/hrono.png']
+        ['Хроно', 'gif-girl/hrono.gif']
     ]
 )
 
@@ -130,6 +132,8 @@ export let Background = new Map([
     ['Street', 'ACT_2/street.png'],
     //ACT3
     ['Classroom', 'ACT_3/smp_classroom1_evening1.png'],
+    //ACT4
+    ['Club', 'ACT_4/club_room.png'],
     //ACT5
     ['Hallway', 'ACT_5/smp_hallway_evening1.png'],
     ['Dark', 'ACT_5/dark_smoke_background.jpg']

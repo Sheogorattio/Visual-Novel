@@ -220,7 +220,7 @@ export const Act2 = [
             },
             {
                 say : "Камень",
-                nextIndex : 2
+                nextIndex : 1
             },
             {
                 say : "...",
@@ -230,161 +230,151 @@ export const Act2 = [
     },
     //option 1
     {
-        author: "Шики",
-        say: "Первый раунд за мной!"
+        author: "Шики ",
+        say: "Я победил 1:0",
+        spawn : "Шики",
+        nextIndex: 2
+    },
+     //option 2
+     {
+        author: "Шики ",
+        say: "Не повезло",
+        spawn : "Шики",
+        nextIndex: 1
+     },
+    //option 1
+    {
+        author: "Шики ",
+        say: "Не знаю что-то",
+        spawn : "Шики"
     },
     {
         author: "Мику",
-        say: "Давай дальше 2 раунд.",// Мику поставит ножницы
+        say: "Еще раз.",// поставит ножницы второй раунд
         spawn : "Мику",
         chioses : [
             {
                 say : "Ножницы",
+                nextIndex : 1
+            },
+            {
+                say : "Бумага",
+                nextIndex : 1 
+            },
+            {
+                say : "Камень",
+                nextIndex : 0
+            },
+            {
+                say : "...",
+                nextIndex : 2
+            }
+        ]
+    },
+    //option 1
+    {
+        author: "Шики ",
+        say: "Победа!",
+        spawn : "Шики",
+        nextIndex: 2
+    },
+     //option 2
+     {
+        author: "Шики ",
+        say: "Эх жаль...",
+        spawn : "Шики",
+        nextIndex: 1
+     },
+    //option 1
+    {
+        author: "Шики ",
+        say: "Настроение что-то пропало",
+        spawn : "Шики"
+    },
+    {
+        author: "Мику",
+        say: "Еще раз.",// поставит ножницы третий раунд
+        spawn : "Мику",
+        chioses : [
+            {
+                say : "Камень",
                 nextIndex : 0
             },
             {
                 say : "Бумага",
+                nextIndex : 1 
+            },
+            {
+                say : "Ножницы",
                 nextIndex : 1
             },
             {
-                say : "Камень",
-                nextIndex : 2
-            },
-            {
                 say : "...",
-                nextIndex : 3
+                nextIndex : 2
             }
         ]
     },
-    //option 1.1
+    //option 1
     {
-        author: "Шики",
-        say: "Вот блин не повезло ничья.",
-        spawn: "Шики"
+        author: "Шики ",
+        say: "Победа!", 
+        spawn : "Шики",
+        nextIndex: 3
+    },
+     //option 2
+     {
+        author: "Шики ",
+        say: "Не смог в последнем раунде тебя выйграть", // теряет здоровье 
+        spawn : "Шики",
+        nextIndex: 2
+     },
+    //option 1
+    {
+        author: "Шики ",
+        say: "Плохо себя чувствую",
+        spawn : "Шики",
+        nextIndex: 0
     },
     {
-        author: "Мику",
-        say: "Неплохо!", // Мику поставит ножницы 
+    author: "Мику ",
+    say: "Выздоравливай", // дает предмет талисман на удачу.
+    spawn : "Мику",
+    },
+    {
+        author: "Мику ",
+        say: "Спасибо что поиграл со мной", 
         spawn : "Мику"
     },
     {
-        author: "Мику",
-        say: "И 3 раунд", // Мику поставит ножницы 
-        spawn : "Мику",
-        chioses : [
-            {
-                say : "Камень",
-                nextIndex : 0
-            },
-            {
-                say : "Ножницы",
-                nextIndex : 1
-            },
-            {
-                say : "Бумага",
-                nextIndex : 2
-            },
-            {
-                say : "...",
-                nextIndex : 3
-            }
-        ]
-    },
-    //option 1.1
-    {
-        author: "Шики",
-        say: "И в 3 раунде победа моя ",
-        spawn: "Шики"
+        author: "Шики ",
+        say: "И тебе", 
+        spawn : "Шики"
     },
     {
-        author: "Мику",
-        say: "Было весело стобой поигарть ",
-        spawn: "Мику",
-        chioses :[
-            {
-                say : "Нуу, даа. Ладно",
-                nextIndex : 0
-            },
-            {
-                say : "Да, с тобой тоже",
-                nextIndex : 1
-            }
-        ]
+        author: "Мику ",
+        say: "Я иногда думала что ты читаешь мои мысли", 
+        spawn : "Мику"
     },
-    {
-        author: "Шики",
-        say: "...",
-        spawn: "Шики",
-        damage : " ",
-        nextIndex : 1
-    },
-    {
-        author: "Шики",
-        say: "Да с тобой было приятно поиграть ",
-        spawn: "Шики"
-    },
-    { //! КОНЕЦ
-        author: "Шики",
-        say: "День будет долгим ",
-        spawn: "Шики",
-        final: ""
-
-    },
-    //option 2
     {
         author: "Шики ",
-        say: "У нас ничью. "
+        say: "Тебе показалось", 
+        spawn : "Шики"
     },
     {
-        author: "Мику",
-        say: "Давай только до трех побед.",
-        spawn : "Мику",
-        chioses : [
-        {
-            say : "Ножницы",
-            nextIndex : 0
-        },
-        {
-            say : "Бумага",
-            nextIndex : 1
-        },
-        {
-            say : "Камень",
-            nextIndex : 2
-        },
-        {
-            say : "...",
-                nextIndex : 3
-            }
-        ]
-    },
-    //option 3
-    {
-        author: "Шики",
-        say: "Вот блин проиграл."
+        author: "Шики ",
+        say: "Как думаешь меня ждет длинный день?", 
+        spawn : "Шики"
     },
     {
-    author: "Мику",
-    say: "Давай только до трех побед.",
-    spawn : "Мику",
-    chioses : [
-    {
-        say : "Ножницы",
-        nextIndex : 0
+        author: "Мику ",
+        say: "Не знаю", 
+        spawn : "Мику"
     },
     {
-        say : "Бумага",
-        nextIndex : 1
-    },
-    {
-        say : "Камень",
-        nextIndex : 2
-    },
-    {
-        say : "...",
-            nextIndex : 3
-        }
-    ]
+        author: "Шики ",
+        say: "Я думаю длинный", 
+        spawn : "Шики",
+        
     },
 ];
 
@@ -513,8 +503,16 @@ export const Act3 = [
                 nextIndex: 0
             },
             {
-                say: "Отказаться",
-                nextIndex: 2
+                say: "Согласиться ",
+                nextIndex: 0
+            },
+            {
+                say: "Согласиться ",
+                nextIndex: 0
+            },
+            {
+                say: "Согласиться ",
+                nextIndex: 0
             }
         ]
     },
@@ -530,25 +528,14 @@ export const Act3 = [
         spawn: "Рика",
         final : ""
     },
-    // option 2.2
-    {
-        author: "Шики",
-        say: "Прости у меня дела так что не смогу.",
-        spawn: "Шики"
-    },
-    {
-        author: "Рика",
-        say: "Хорошо спасибо за ответ, хорошего дня.",
-        spawn: "Рика",
-        final : ""
-    }
 ]
 
 export const Act4 = [
     {
         author: " ",
         say: "Шики приходит в клубную комнату чтобы обсудить новую недавно вышедшею игру Хулф Мульф 3.",
-        background: "Club"
+        background: "Club",
+        spawn: "Шики"
     },
     {
         author: "Шики",
