@@ -7,11 +7,11 @@ import * as File from './dialogue_operatoins.js'
 let MainItems ={
   lunchbox : false,//
   keychain : false,//
-  talisman : false,
+  talisman : false,//
   chocolate : false,//
   bracelet : false,//
 }
-let Health = 1;
+let Health = 3;
 
 
 const textdiv = Page.CreateTextHolder();
@@ -29,7 +29,7 @@ const SAVE = document.querySelector('.save');
 
 TEXT_HOLDER.textContent = "Нажмите кнопку ДАЛЕЕ, чтобы продолжить";
 
-let ACT_SEQ_COUNT = 0;
+let ACT_SEQ_COUNT = 4;//!
 let ActArr = [Dialogue.GetAct1(),Dialogue.GetAct2(),Dialogue.GetAct3(),Dialogue.GetAct4(),Dialogue.GetAct5()]
 let Act = ActArr[ACT_SEQ_COUNT];
 
@@ -94,6 +94,9 @@ function HandleLine(line){
       Dialogue.Dialogue.min_counter =0;
       CONTROL_NEXT.click();
     }
+  }
+  if(line.hasOwnProperty('checkAvailability')){
+    Dialogue.Dialogue.counter+=File.CommandCreator.create('checkAvailability', MainItems).execute();
   }
   File.CommandCreator.create('say', line.author,line.say,AUTHOR_HOLDER,TEXT_HOLDER).execute();
   if(line.hasOwnProperty('final')){
