@@ -4,19 +4,16 @@ export const Act1 = [
         say: "Придя в себя Шики отправился в ванную чтобы умыться.",
         background: "Bathroom",
         spawn: "none",
-        health_recover: "",
-        damage: ""
+        health_recover: ""
     },
     {
         author: " ",
-        say: "Набрав холодной воды Шики облил им свое лицо.",
-        damage: ""
+        say: "Набрав холодной воды Шики облил им свое лицо."
     },
     {
         author: "Шики",
         say: "Так надо попробовать другой подход.",
-        spawn : "Шики",
-        damage: ""
+        spawn : "Шики"
     },
     {
         author: "Шики",
