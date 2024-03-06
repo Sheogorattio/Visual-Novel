@@ -98,7 +98,8 @@ function HandleLine(line){
   File.CommandCreator.create('say', line.author,line.say,AUTHOR_HOLDER,TEXT_HOLDER).execute();
   if(line.hasOwnProperty('final')){
     if(ACT_SEQ_COUNT === ActArr) ACT_SEQ_COUNT = 0;
-    else Act = ActArr[++ACT_SEQ_COUNT];
+    else ACT_SEQ_COUNT++;
+    Act = ActArr[ACT_SEQ_COUNT]
     Dialogue.Dialogue.counter = -1;
     Dialogue.Dialogue.min_counter =0;
   }
