@@ -107,9 +107,9 @@ export class CommandSetHearts extends Command{
         console.log(health);
     }
     execute(){
-        if(this.health <= 1){
-            document.getElementById("txt").innerHTML = "Вы проиграли";
-        }
+        // if(this.health <= 1){
+        //     document.getElementById("txt").innerHTML = "Вы проиграли";
+        // }
         for(let i = 0; i < 3; i++){
             this.heart[i].querySelector("img").src = "ACT_1/red_heart.png";
         }
@@ -155,6 +155,12 @@ export class CommandCreator{
             }
             case 'getItem' :{
                 return new CommandChangeItemState(arguments[1], arguments[2]);//itemName, items
+            }
+            case 'setHearts': {
+                return new CommandSetHearts(arguments[1], arguments[2]);
+            }
+            case 'checkAvailability' :{
+                return new CommandCheckAvailability(arguments[1]);//Items
             }
         }
     }
