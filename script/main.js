@@ -5,13 +5,13 @@ import * as Dialogue from './dialogue.js'
 import * as File from './dialogue_operatoins.js'
 
 let MainItems ={
-  lunchbox : false,
-  keychain : false,
+  lunchbox : false,//
+  keychain : false,//
   talisman : false,
-  chocolate : false,
-  bracelet : false,
+  chocolate : false,//
+  bracelet : false,//
 }
-let Health = 3;
+let Health = 1;
 
 
 const textdiv = Page.CreateTextHolder();
@@ -69,7 +69,7 @@ function HandleLine(line){
     File.CommandCreator.create('loadImage', Page.Background.get(line.background), null, null).execute();
   }
   if(line.hasOwnProperty('spawn')){
-    console.log('spawn');
+    //console.log('spawn');
     File.CommandCreator.create('loadImage', null, Page.Characters.get(line.spawn), characterDiv.querySelector('img')).execute();
   }
   if(line.hasOwnProperty('chioses')){
@@ -80,6 +80,18 @@ function HandleLine(line){
     console.log(Dialogue.Dialogue.counter)
     Act = File.CommandCreator.create('changeIndex', line.nextIndex, Act).execute();
     console.log(Dialogue.Dialogue.counter)
+  }
+  if(line.hasOwnProperty('damage')){
+    if(Health>1){
+      Health--;
+    }
+    else{
+      ACT_SEQ_COUNT=0;
+      Act = ActArr[ACT_SEQ_COUNT];
+      Dialogue.Dialogue.counter = -1;
+      Dialogue.Dialogue.min_counter =0;
+      CONTROL_NEXT.click();
+    }
   }
   File.CommandCreator.create('say', line.author,line.say,AUTHOR_HOLDER,TEXT_HOLDER).execute();
   if(line.hasOwnProperty('final')){

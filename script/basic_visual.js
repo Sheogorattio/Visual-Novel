@@ -101,6 +101,7 @@ export function ClearOptions(optionsBar){
 }
 
 export let Characters = new Map([
+        ['none',' '],
         ['Шики','ACT_1/MainCharacter.png'],
         ['Мидзу','ACT_1/Sister.png'],
         //ACT2

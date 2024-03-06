@@ -2,7 +2,8 @@ export const Act1 = [
     {
         author: " ",
         say: "Придя в себя Шики отправился в ванную чтобы умыться.",
-        background: "Bathroom"
+        background: "Bathroom",
+        spawn: "none"
     },
     {
         author: " ",
@@ -36,15 +37,15 @@ export const Act1 = [
         chioses : [
             {
                 say : "Но все же тебе не стоит так рано вставать.",
-                nextIndex : 0//+1
+                nextIndex : 0//+1   +0
             },
             {
                 say : "Спасибо съем с превеликим удовольствием.",
-                nextIndex : 4//+1   +1
+                nextIndex : 4//+1   +4
             },
             {
                 say : "Сама дура, а я в школу.",
-                nextIndex : 9//+1   +2
+                nextIndex : 9//+1   +9
             },
             {
                 say : "Чтобы я без тебя делал.",
@@ -106,7 +107,8 @@ export const Act1 = [
     {
         author: "Мидзу",
         say: "Братик дурак дурак дурак ",
-        spawn : "Мидзу"
+        spawn : "Мидзу",
+        damage : ""
     },
     {
         author: "Шики",
@@ -291,7 +293,24 @@ export const Act2 = [
     {
         author: "Мику",
         say: "Было весело стобой поигарть ",
-        spawn: "Мику"
+        spawn: "Мику",
+        chioses :[
+            {
+                say : "Нуу, даа. Ладно",
+                nextIndex : 0
+            },
+            {
+                say : "Да, с тобой тоже",
+                nextIndex : 1
+            }
+        ]
+    },
+    {
+        author: "Шики",
+        say: "...",
+        spawn: "Шики",
+        damage : " ",
+        nextIndex : 1
     },
     {
         author: "Шики",
@@ -784,7 +803,8 @@ export const Act4 = [
                 chioses : [
                     {
                         say : "1-3 ", //тут теряем хп
-                        nextIndex : 1
+                        nextIndex : 1,
+                        damage : ""
                        },
                     {
                         say : "3-6",
@@ -795,7 +815,7 @@ export const Act4 = [
                            nextIndex : 0
                        },
                        {
-                           say : "Она не оценима",
+                           say : "Она неоценима",
                         nextIndex : 1
                     }
                    ]
@@ -961,7 +981,7 @@ export const Act4 = [
                 author: "",
                 say: "*Шики не успел понять что произошло забрал брелок думая что потом отдаст*", //получаем предмет брелок
                 spawn: "Шики",
-                getItem : "chocolate"
+                getItem : "keychain"
             },
             {
                 author: "Учитель",
