@@ -340,6 +340,7 @@ export const Act2 = [
     author: "Мику ",
     say: "Выздоравливай", // дает предмет талисман на удачу.
     spawn : "Мику",
+    getItem: "talisman"
     },
     {
         author: "Мику ",
@@ -373,9 +374,9 @@ export const Act2 = [
     },
     {
         author: "Шики ",
-        say: "Я думаю длинный", 
+        say: "Я думаю день будет длинный", 
         spawn : "Шики",
-        
+        final : ""
     },
 ];
 
@@ -781,7 +782,7 @@ export const Act4 = [
                 author: "Шидзу",
                 say: "Молодец, а ты хорошо все запомнил и последний вопрос очень сложный!",
                 //+Дасть вещь(Браслет)
-                getItem: "bracelet",
+                getItem: "chocolate",
                 nextIndex : 1
             },
             //option 2
