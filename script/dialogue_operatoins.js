@@ -116,6 +116,28 @@ export class CommandSetHearts extends Command{
     }
 }
 
+export class CommandCheckAvailability extends Command{
+    constructor(Items){
+        super();
+        this.items = Items;     
+    }
+    execute(){
+        let counter =0;
+        console.log(this.items);
+        if(this.items.chocolate === true) counter++;
+        if(this.items.talisman === true) counter++;
+        if(this.items.bracelet === true) counter++;
+        if(this.items.chocolate === true) counter++;
+        if(this.items.chocolate === true) counter++;
+        let addIndex =0;
+        if(counter === 0 ) return addIndex;
+        else if(counter < 3) addIndex = 1 ;
+        else if(counter < 5) addIndex = 2;
+        else if(counter === 5) addIndex = 3;
+        return addIndex;
+    }
+}
+
 export class CommandCreator{
     static create(commandType){//'say', arg1, arg2, ...
         switch (commandType){
@@ -133,9 +155,6 @@ export class CommandCreator{
             }
             case 'getItem' :{
                 return new CommandChangeItemState(arguments[1], arguments[2]);//itemName, items
-            }
-            case 'setHearts': {
-                return new CommandSetHearts(arguments[1], arguments[2]);//health, heart
             }
         }
     }

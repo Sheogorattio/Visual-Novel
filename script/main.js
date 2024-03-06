@@ -7,12 +7,13 @@ import * as File from './dialogue_operatoins.js'
 let MainItems ={
   lunchbox : false,//
   keychain : false,//
-  talisman : false,
+  talisman : false,//
   chocolate : false,//
   bracelet : false,//
 }
 let Health = 3;
 let heart = document.getElementsByClassName("heart");
+
 
 const textdiv = Page.CreateTextHolder();
 const optionsBar = Page.CreateOptionsBar();
@@ -100,6 +101,9 @@ function HandleLine(line){
   if(line.hasOwnProperty('health_recover')){
     File.CommandCreator.create('setHearts', Health, heart).execute();
     Health = 3;
+  }
+  if(line.hasOwnProperty('checkAvailability')){
+    Dialogue.Dialogue.counter+=File.CommandCreator.create('checkAvailability', MainItems).execute();
   }
   File.CommandCreator.create('say', line.author,line.say,AUTHOR_HOLDER,TEXT_HOLDER).execute();
   if(line.hasOwnProperty('final')){
