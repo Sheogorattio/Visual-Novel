@@ -479,7 +479,7 @@ export const Act3 = [
         author: "Ютори",
         say: "Спасибо за помощь с математикой Шики!",
         spawn: "Ютори",
-        getItem: "keychain",
+        getItem: "bracelet",
         nextIndex: 1
     },
     {
@@ -1163,6 +1163,4 @@ export const Act5 = [
         say: "Стоп что опять…",
         final: ""
     }
-
-
 ];
