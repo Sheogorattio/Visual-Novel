@@ -110,6 +110,7 @@ export class CommandSetHearts extends Command{
         // if(this.health <= 1){
         //     document.getElementById("txt").innerHTML = "Вы проиграли";
         // }
+        console.log(this.heart);
         for(let i = 0; i < 3; i++){
             this.heart[i].querySelector("img").src = "ACT_1/red_heart.png";
         }
