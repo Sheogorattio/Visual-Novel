@@ -124,6 +124,10 @@ function HandleLine(line){
   if(line.hasOwnProperty('health_recover')){
     File.CommandCreator.create('setHearts', Health, heart).execute();
     Health = 3;
+    let items = document.body.querySelectorAll('#main_items>.item>img');
+    for(let i =0 ; i<items.length;i++){
+      items[i].src = ' ';
+    }
   }
   if(line.hasOwnProperty('checkAvailability')){
     Dialogue.Dialogue.counter+=File.CommandCreator.create('checkAvailability', MainItems).execute();
