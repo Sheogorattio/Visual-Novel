@@ -23,10 +23,16 @@ export function CreateTextHolder(){
     let prev = document.createElement('div');
     prev.classList.add('prev');
     prev.textContent = 'Назад';
+
+    let save = document.createElement('div');
+    save.classList.add('save');
+    save.textContent = 'Сохранить';
+
     let next = document.createElement('div');
     next.classList.add('next');
     next.textContent = 'Далее';
     navigation.appendChild(prev);
+    navigation.appendChild(save);
     navigation.appendChild(next);
 
     return holder;

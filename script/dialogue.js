@@ -2,17 +2,19 @@ import * as Lines from './lines.js'
 export class Dialogue{
     constructor(lines){
         this.lines = lines;
-        this.counter = -1;
+
     }
+    static counter = -1;
+    static min_counter = 0;
     getLines(){
         return JSON.stringify(this.lines);
     }
     getNextLine(){
-        return this.lines[++this.counter];
+        return this.lines[++Dialogue.counter];
     }
     getPrevLine(){
-        if(this.counter >0) return this.lines[--this.counter];
-        else return this.lines[this.counter];
+        if(Dialogue.counter >Dialogue.min_counter) return this.lines[--Dialogue.counter];
+        else return this.lines[Dialogue.counter];
     }
 }
 

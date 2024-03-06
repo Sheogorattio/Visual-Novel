@@ -57,7 +57,8 @@ export class CommandChangeIndex extends Command{
         this.Dialogue = Dialogue;
     }
     execute(){
-        this.Dialogue.counter+=this.indexPlus;
+        Dialogue.counter+=this.indexPlus;
+        return this.Dialogue;
     }
 }
 
