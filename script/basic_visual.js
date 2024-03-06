@@ -97,6 +97,8 @@ export function CreateOption(optionsBar, text, nextLineIndex){
         document.body.querySelector('.next').classList.remove('hide');
         document.body.querySelector('.next').click();
         ClearOptions(optionsBar);
+        audio.src='ACT_1/click2.wav';
+        audio.play();
     })
     return element;
 }
