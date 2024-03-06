@@ -104,3 +104,31 @@ body {
 .option:hover{
     background: rgba(227, 180, 113, 0.768);
 }
+
+#main_items{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 90px;
+    height: 380px;
+    margin: 15px;
+    top: 80px;
+    border-radius: 15px;
+    background-color: rgba(230, 201, 160, 0.768);
+    align-items: center;
+    justify-content: center;
+}
+
+.item{
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    padding: 2px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgba(228, 176, 104, 0.768);
+}
+
+.item img{
+    height: 100%;
+}
