@@ -11,7 +11,7 @@ let MainItems ={
   chocolate : false,//
   bracelet : false,//
 }
-let Health = 3;
+let Health = 1;
 let heart = document.getElementsByClassName("heart");
 
 
