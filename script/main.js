@@ -11,6 +11,8 @@ let MainItems ={
   chocolate : false,//
   bracelet : false,//
 }
+
+
 let Health = 1;
 let heart = document.getElementsByClassName("heart");
 
@@ -33,6 +35,27 @@ TEXT_HOLDER.textContent = "Нажмите кнопку ДАЛЕЕ, чтобы п
 let ACT_SEQ_COUNT = 0;
 let ActArr = [Dialogue.GetAct1(),Dialogue.GetAct2(),Dialogue.GetAct3(),Dialogue.GetAct4(),Dialogue.GetAct5()]
 let Act = ActArr[ACT_SEQ_COUNT];
+
+function loadSave(){
+  if (!isNaN(localStorage.key('health')))  ACT_SEQ_COUNT = Number(localStorage.key('health'));
+  else Health = 3;
+  let MainItems ={
+    lunchbox : false,//
+    keychain : false,//
+    talisman : false,//
+    chocolate : false,//
+    bracelet : false,//
+  }
+  MainItems.bracelet = Boolean(localStorage.key('bracelet')) ?? false;
+  MainItems.keychain = Boolean(localStorage.key('keychain')) ?? false;
+  MainItems.talisman = Boolean(localStorage.key('talisman')) ?? false;
+  MainItems.chocolate = Boolean(localStorage.key('chocolate')) ?? false;
+  MainItems.bracelet = Boolean(localStorage.key('bracelet')) ?? false;
+  if (!isNaN(localStorage.key('dialogue_number')))  ACT_SEQ_COUNT = Number(localStorage.key('dialogue_number'));
+  else ACT_SEQ_COUNT = 0;
+}
+
+loadSave();
 
 SAVE.addEventListener('click', ()=>{
   localStorage.setItem('bracelet', MainItems.bracelet);
@@ -107,10 +130,11 @@ function HandleLine(line){
   }
   File.CommandCreator.create('say', line.author,line.say,AUTHOR_HOLDER,TEXT_HOLDER).execute();
   if(line.hasOwnProperty('final')){
-    if(ACT_SEQ_COUNT === ActArr) ACT_SEQ_COUNT = 0;
+    if(ACT_SEQ_COUNT === ActArr.length-1) ACT_SEQ_COUNT = 0;
     else ACT_SEQ_COUNT++;
     Act = ActArr[ACT_SEQ_COUNT]
     Dialogue.Dialogue.counter = -1;
     Dialogue.Dialogue.min_counter =0;
   }
+  
 }

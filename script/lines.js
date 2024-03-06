@@ -225,7 +225,7 @@ export const Act2 = [
             },
             {
                 say : "...",
-                nextIndex : 3
+                nextIndex : 2
             }
         ]
     },
