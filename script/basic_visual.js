@@ -107,6 +107,11 @@ export let Characters = new Map([
         ['Мидзу','ACT_1/Sister.png'],
         //ACT2
         ['Мику', 'ACT_2/miku.png'],
+        //ACT3
+        ['Рика', 'ACT_3/rika.png'],
+        ['Ютори', 'ACT_3/ytori.png'],
+        //ACT5
+        ['Хроно', 'ACT_5/hrono.png']
     ]
 )
 
@@ -116,4 +121,9 @@ export let Background = new Map([
     ['Kitchen','ACT_1/Kitchen_Day.png'],
     //ACT 2 
     ['Street', 'ACT_2/street.png'],
+    //ACT3
+    ['Classroom', 'ACT_3/smp_classroom1_evening1.png'],
+    //ACT5
+    ['Hallway', 'ACT_5/smp_hallway_evening1.png'],
+    ['Dark', 'ACT_5/dark_smoke_background.jpg']
 ])

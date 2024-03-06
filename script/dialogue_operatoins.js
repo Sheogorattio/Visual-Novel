@@ -72,22 +72,27 @@ export class CommandChangeItemState extends Command{
         switch(this.itemName){
             case 'lunchbox':{
                 this.items.lunchbox = true;
+                document.getElementById("img_item_1").src = "item-for-menu/lunch.png";
                 return this.items;
             }
             case 'keychain':{
-                this.items.bracelet = true;
+                this.items.keychain = true;
+                document.getElementById("img_item_2").src = "item-for-menu/brelock.png";
                 return this.items;
             }
             case 'talisman':{
                 this.items.bracelet = true;
+                document.getElementById("img_item_3").src = "item-for-menu/braslet.png";
                 return this.items;
             }
             case 'chocolate':{
-                this.items.bracelet = true;
+                this.items.chocolate = true;
+                document.getElementById("img_item_4").src = "item-for-menu/milk.png";
                 return this.items;
             }
             case 'bracelet':{
-                this.items.bracelet = true;
+                this.items.talisman = true;
+                document.getElementById("img_item_5").src = "item-for-menu/talisman.png";
                 return this.items;
             }
         }
