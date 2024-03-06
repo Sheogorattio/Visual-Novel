@@ -68,6 +68,15 @@ body {
     justify-content: space-between;
 }
 
+.musa {
+    height: 100px; 
+    width: 100px; 
+  }
+  .musa img {
+    height: 100%; 
+    width: 100%; 
+  }
+
 .nav div{
     font-size: 22px;
     transition: .2s;
