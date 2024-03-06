@@ -29,7 +29,7 @@ const SAVE = document.querySelector('.save');
 
 TEXT_HOLDER.textContent = "Нажмите кнопку ДАЛЕЕ, чтобы продолжить";
 
-let ACT_SEQ_COUNT = 4;//!
+let ACT_SEQ_COUNT = 0;
 let ActArr = [Dialogue.GetAct1(),Dialogue.GetAct2(),Dialogue.GetAct3(),Dialogue.GetAct4(),Dialogue.GetAct5()]
 let Act = ActArr[ACT_SEQ_COUNT];
 
