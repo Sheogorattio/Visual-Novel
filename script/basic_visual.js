@@ -87,6 +87,7 @@ export function CreateOption(optionsBar, text, nextLineIndex){
     element.textContent = text;
     element.addEventListener('mousedown', ()=>{
         Dialogue.counter+=nextLineIndex;
+        document.body.querySelector('.next').classList.remove('hide');
         document.body.querySelector('.next').click();
         ClearOptions(optionsBar);
     })

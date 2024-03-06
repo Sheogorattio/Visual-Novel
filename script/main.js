@@ -60,6 +60,7 @@ CONTROL_PREV.addEventListener('click', ()=>{
 })
 
 function HandleLine(line){
+  if(CONTROL_NEXT.classList.contains('hide'))CONTROL_NEXT.classList.remove('hide');
   if(line.hasOwnProperty('getItem')){
     MainItems = File.CommandCreator.create('getItem',line.getItem, MainItems).execute();
     console.log(MainItems);
@@ -74,6 +75,7 @@ function HandleLine(line){
   }
   if(line.hasOwnProperty('chioses')){
     Act.min_counter = Act.counter;
+    CONTROL_NEXT.classList.add('hide');
     File.CommandCreator.create('choose', line.chioses,optionsBar).execute();
   }
   if(line.hasOwnProperty('nextIndex')){
