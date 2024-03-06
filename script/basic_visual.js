@@ -81,10 +81,17 @@ export function CreateOptionsBar(){
     return element;
 }
 
+let audio = new Audio();
+
+
 export function CreateOption(optionsBar, text, nextLineIndex){
     let element = document.createElement('div'); 
     element.classList.add('option');
     element.textContent = text;
+    element.addEventListener('mouseenter', ()=>{
+        audio.src='ACT_1/click.wav';
+        audio.play();
+    })
     element.addEventListener('mousedown', ()=>{
         Dialogue.counter+=nextLineIndex;
         document.body.querySelector('.next').classList.remove('hide');
