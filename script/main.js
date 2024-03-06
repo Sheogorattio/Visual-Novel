@@ -11,8 +11,8 @@ let MainItems ={
   chocolate : false,//
   bracelet : false,//
 }
-let Health = 1;
-
+let Health = 3;
+let heart = document.getElementsByClassName("heart");
 
 const textdiv = Page.CreateTextHolder();
 const optionsBar = Page.CreateOptionsBar();
@@ -84,6 +84,8 @@ function HandleLine(line){
     console.log(Dialogue.Dialogue.counter)
   }
   if(line.hasOwnProperty('damage')){
+    heart[Health - 1].querySelector("img").src = "ACT_1/black_heart.png";
+
     if(Health>1){
       Health--;
     }
@@ -91,9 +93,13 @@ function HandleLine(line){
       ACT_SEQ_COUNT=0;
       Act = ActArr[ACT_SEQ_COUNT];
       Dialogue.Dialogue.counter = -1;
-      Dialogue.Dialogue.min_counter =0;
+      Dialogue.Dialogue.min_counter = 0;
       CONTROL_NEXT.click();
     }
+  } 
+  if(line.hasOwnProperty('health_recover')){
+    File.CommandCreator.create('setHearts', Health, heart).execute();
+    Health = 3;
   }
   File.CommandCreator.create('say', line.author,line.say,AUTHOR_HOLDER,TEXT_HOLDER).execute();
   if(line.hasOwnProperty('final')){
